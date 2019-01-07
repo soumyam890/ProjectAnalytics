@@ -1,0 +1,34 @@
+<div>
+    <h3 class="text-muted">
+      {{ title }}
+    </h3>  
+  </div>  
+<app-chart></app-chart>
+
+<table class='table' *ngIf="summary">
+  <thead>
+    <tr>
+      <th class="text-muted">AMOUNT</th>
+      <th class="text-muted">DATE</th>
+      <th class="text-muted">POINTS</th>
+      <th class="text-muted">DIFFERENCE</th>   
+      <th class="text-muted">DATES</th>  
+      <th class="text-muted">COUNTRY</th>
+      <th class="text-muted hidden-xs">SEGMENT</th>
+      <th class="text-muted hidden-xs">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let overview of summary">
+      <td class="color-green">{{ overview.amount.replace('S','$') }}</td>
+      <td>{{ overview.datess }}</td>
+      <td>{{ overview.points }}</td>
+      <!––Condition simply added for showing the color variation in text ––>
+      <td [ngClass]="{'color-green': +overview.datess >= +475, 'color-red': +overview.datess < +475}">{{ overview.difference }}</td>
+      <td>{{ overview.date }}</td>
+      <td>{{ overview.country }}</td>
+      <td class="hidden-xs">{{ overview.segment }}</td>    
+      <td class="hidden-xs"><a href="#" class="caret"></a></td>
+    </tr>
+  </tbody>
+</table>

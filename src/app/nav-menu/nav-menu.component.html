@@ -1,0 +1,113 @@
+<div class='main-nav'>
+    <div class='navbar navbar-default'>
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded'
+                (click)='toggle()'>
+                <span class='sr-only'>Toggle navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+            <div class="hidden-md hidden-lg hidden-sm" style="padding-left:5px">
+                <h3>Analytics</h3>
+            </div>
+            <a href="#" class="navbar-left hidden-xs hidden-sm clearfix navbar-collapse collapse" style="border:0;">
+                <div class="profile hidden-xs hidden-sm">
+                    <div class="profile_pic">
+                        <img src="assets/img/person.png" alt="person" class="img-circle profile_img">
+                    </div>
+                    <div class="profile_info">
+                        <h4>Andrew <span class="dot"></span></h4>
+                        <p class="text-muted" style="margin-top:-10px">Co-founder</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }' style="border:0;margin-top: 15px">
+            <ul class='nav navbar-nav'>
+                <h5 class="text-muted hidden-xs hidden-sm" style="margin-left: 9px">DEPARTMENT</h5>
+                <li>
+                    <div class="dropdown hidden-xs hidden-sm">
+                        <button class="btn btn-default dropdown-toggle width100 text-left" type="button" data-toggle="dropdown">Select
+                            Department
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a [routerLink]='["/"]' (click)='collapse()'>Marketing</a></li>
+                            <li><a href="#">Management</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li appExpandMenu class="active cursorPointer">
+                    <a>
+                        <h5 class="text-muted">MARKETING <span><i class="caret"></i></span></h5>
+                    </a>
+                </li>
+                <ul class="nav submenu">
+                    <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                        <a [routerLink]='["/"]' (click)='collapse()'>
+                            Overview
+                        </a>
+                    </li>
+                    <li [routerLinkActive]='["link-active"]'>
+                        <a [routerLink]='["/marketing/schedule"]' (click)='collapse()'>Schedule
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)='collapse()'>
+                            Employees
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)='collapse()'>
+                            Calendar <span class="notificationBadge" data-badge="3"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)='collapse()'>
+                            Priorities
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)='collapse()'>
+                            Social Media
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+            <ul class='nav navbar-nav'>
+                <li appExpandMenu class="cursorPointer">
+                    <a>
+                        <h5 class="text-muted">MANAGEMENT <span><i class="caret"></i></span></h5>
+                    </a>
+                </li>
+                <ul class="nav submenu">
+                    <li>
+                        <a (click)='collapse()'>
+                            Account
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)='collapse()'>
+                            Payment
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)='collapse()'>
+                            Segment <span class="notificationBadge" data-badge="27"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)='collapse()'>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+            <footer class='cursorPointer navbarfooter'>
+                <div>
+                    <h5 class="cursorPointer text-muted">Logout <b class="glyphicon glyphicon-log-out" aria-hidden="true"></b></h5>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+li .glyphicon {
+    margin-right: 10px;
+}
+ul li + .submenu {
+    display: none;
+    cursor:pointer 
+}
+
+ul li.active + .submenu {
+    display: block;
+    list-style: none;
+    cursor:pointer 
+}
+/* Highlighting rules for nav menu items */
+li.link-active a, li.link-active a:hover, li.link-active a:focus {
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+}
+/* Keep the nav menu independent of scrolling and on top of other items */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+@media (min-width: 768px) {
+   /* On small screens, convert the nav menu to a vertical sidebar */
+    .main-nav {
+        height: 100%;
+        width: calc(17% - 10px);
+   }
+    .navbar {
+        border-radius: 0px;
+        border-width: 0px;
+        height: 100%;
+        overflow-y: auto;
+   }
+    .navbar-header {
+        float: none;
+   }
+    .navbar-collapse {
+        border-top: 1px solid #444;
+        padding: 0px;
+   }
+    .navbar ul {
+        float: none;
+   }
+    .navbar li {
+        float: none;
+        font-size: 12px;
+        margin: 1px 4px 2px 4px;
+   }
+    .navbar li a {
+        padding: 10px 16px;
+        border-radius: 4px;
+   }
+    .navbar a {
+       /* If a menu item's text is too long, truncate it */
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+   }
+    .navbar li a {
+        padding: 5px 16px;
+        border-radius: 4px;
+   }
+    .profile_pic {
+        width: 40%;
+        float: left;
+        padding-left:5px;
+   }
+    .profile_info {
+        width: 60%;
+        float: right;
+        padding-top:10px;
+   }
+    .profile{
+        margin-top:10px;
+   }
+    .dot {
+        height: 7px;
+        width: 7px;
+        background-color: green;
+        border-radius: 50%;
+        display: inline-block;
+        margin-bottom: 2px;
+   }
+    .navbar-default{
+        background-color: transparent;
+   }
+    .main_menu_side {
+        padding: 0;
+   }
+    .notificationBadge {
+        position:relative;
+   }
+    .notificationBadge[data-badge]:after {
+        content:attr(data-badge);
+        position:absolute;
+        right:-25px;
+        font-size:.7em;
+        background:orangered;
+        color:white;
+        width:18px;
+       height:18px;
+        text-align:center;
+        line-height:18px;
+        border-radius:50%;
+        box-shadow:0 0 1px #333;
+   }
+   .cursorPointer {
+       cursor: pointer;
+   }
+   .btn-white{
+       background: white
+   }
+
+   .btn-white :focus{
+    background: white;
+    border:0;
+   }
+
+   .btn-white :hover{
+    background: white;
+    border:0;
+   } 
+    /* Sticky footer styles
+    -------------------------------------------------- */
+    .navbarfooter {
+        position: absolute;
+        bottom: 0;
+        /* Set the fixed height of the footer here */
+        height: 60px;
+        padding: 19px
+    }
+}
